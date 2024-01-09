@@ -20,14 +20,11 @@ The program that I write is intended for the command-line interface, and it's
 small enough to be contained within a single source file.  It takes no input[^1]
 and outputs a small ASCII art image with ANSI coloring.  Namely, the program
 generates a [Newton fractal][2] image corresponding to the 3<sup>rd</sup>-degree
-polynomial $p(z) = z^3 - 1$.[^2]
+polynomial $p(z) = z^3 - 1$.[^2] All you really need to know is that a fractal
+is a special kind of mathematical pattern.  The output will look like this[^3],
+but in ASCII art:
 
-# What's a Newton Fractal?
-
-All you really need to know is that a fractal is a special kind of mathematical
-pattern.  The output will look like this[^3], but in ASCII art:
-
-<img src="newton-fractal.png" width=25% height=25%>
+<p align="center"><img src="newton-fractal.png" width=25% height=25%></p>
 
 # Featured Languages
 
@@ -45,8 +42,9 @@ I hope to make this list longer in the coming year.
 
 # Abbreviations
 
-I use a number of abbreviations throughout this project.  Most are
-self-explanatory.  I aim for brevity and simplicity in my naming choices.
+I use a number of abbreviations consistently throughout this project.  Most are
+self-explanatory.  I aim for brevity and simplicity in my variable-naming
+choices.
 
 | Abbreviation | Meaning                       |
 | ------------ | ----------------------------- |
@@ -59,9 +57,9 @@ self-explanatory.  I aim for brevity and simplicity in my naming choices.
 | max          | maximum                       |
 | poly         | polynomial                    |
 | px           | pixel                         |
-| re and im    | components of complex number  |
+| re, im       | components of complex number  |
 | tol          | tolerance                     |
-| z and w      | denote complex numbers        |
+| z, w         | denote complex numbers        |
 
 <!-- References and Footnotes -->
 
@@ -69,15 +67,15 @@ self-explanatory.  I aim for brevity and simplicity in my naming choices.
 [2]: https://en.wikipedia.org/wiki/Newton_fractal
 
 [^1]: Later I will consider expanding each of the program implementations to
-support command-line input.  This will entail writing a basic command-line
-argument parser in each language.
+  support command-line input.  This will entail writing a basic command-line
+  argument parser in each language.
 
 [^2]:The program actually addresses the general case of an
-n<sup>th</sup>-degree, integer polynomial of a single variable.  The
-3<sup>rd</sup>-degree polynomial is passed as a hard-coded argument to a
-function accepting the general case as a parameter.
+  n<sup>th</sup>-degree, integer polynomial of a single variable.  The
+  3<sup>rd</sup>-degree polynomial is passed as a hard-coded argument to a
+  function accepting the general case as a parameter.
 
 [^3]:I also wrote a full-fledged Newton fractal image generator, outputting
-image files as apposed to text.  The featured image was generated with that
-program.  Sooner or later, I will upload that to GitHub too.  Full details about
-Newton fractals will be provided there.
+  image files as apposed to text.  The featured image was generated with that
+  program.  Sooner or later, I will upload that to GitHub too.  Full details
+  about Newton fractals will be provided there.
