@@ -1,14 +1,20 @@
-# ASCII Art Fractals
+# ascii-art-fractals
+
+<!--
+	FILENAME: README.md
+	AUTHOR: Zachary Krepelka
+	DATE: Wednesday, January 3rd, 2024
+-->
 
 My goal with this project is to *gain experience programming in different
 languages.*  In this project, I implement the same program over and over again,
-but each time I do it in a different programming language.  The program is
+but each time, I do it in a different programming language.  The program is
 simple enough for me to write on a weekend once I've learned the rudiments of a
 language, but it's far more rewarding than a trivial `Hello, World!` program.  I
 was inspired to pursue this project after reading [Programming Language
 Explorations][1].
 
-# The Program
+# Program Introduction
 
 The program that I write is intended for the command-line interface, and it's
 small enough to be contained within a single source file.  It takes no input[^1]
@@ -21,7 +27,7 @@ polynomial $p(z) = z^3 - 1$.[^2]
 All you really need to know is that a fractal is a special kind of mathematical
 pattern.  The output will look like this[^3], but in ASCII art:
 
-![A Newton fractal](newton-fractal.png)
+<img src="newton-fractal.png" width=25% height=25%>
 
 # Featured Languages
 
@@ -42,18 +48,20 @@ I hope to make this list longer in the coming year.
 I use a number of abbreviations throughout this project.  Most are
 self-explanatory.  I aim for brevity and simplicity in my naming choices.
 
-* `abs` stands for 'absolute value'.
-* `coeff` stands for 'coefficient'.
-* `der` stands for 'derivative'.
-* `diff` stands for 'differentiate'.
-* `dist` stands for 'distance'.
-* `exp` stands for 'exponent'.
-* `max` stands for 'maximum'.
-* `poly` stands for 'polynomial'.
-* `px` stands for 'pixel'.
-* `re` and `im` denote the individual parts of a complex number.
-* `tol` stands for 'tolerance'.
-* `z` and `w` are commonly used to denote complex numbers.
+| Abbreviation | Meaning                       |
+| ------------ | ----------------------------- |
+| abs          | absolute value                |
+| coeff        | coefficient                   |
+| der          | derivative                    |
+| diff         | differentiate                 |
+| dist         | distance                      |
+| exp          | exponent                      |
+| max          | maximum                       |
+| poly         | polynomial                    |
+| px           | pixel                         |
+| re and im    | components of complex number  |
+| tol          | tolerance                     |
+| z and w      | denote complex numbers        |
 
 <!-- References and Footnotes -->
 
