@@ -28,7 +28,8 @@ but in ASCII art:
 
 # Featured Languages
 
-They are listed in the order that I wrote the programs with them.
+They are listed in the order that I wrote the programs with them.  I hope to
+make this list longer in the coming year.
 
 1. Java
 2. JavaScript
@@ -38,7 +39,12 @@ They are listed in the order that I wrote the programs with them.
 6. Ruby
 7. Julia
 
-I hope to make this list longer in the coming year.
+It's interesting to observe GitHub's language bar on the side of the screen.
+Each language is used once for the same purpose and in the same manner, so in
+this circumstance, the language bar seems to suggest the brevity of each
+language for this particular task. You will notice that Julia occupies the
+smallest portion of the bar. Julia is well suited for mathematical and
+scientific computation.
 
 # Abbreviations
 
@@ -46,25 +52,31 @@ I use a number of abbreviations consistently throughout this project.  Most are
 self-explanatory.  I aim for brevity and simplicity in my variable-naming
 choices.
 
-| Abbreviation | Meaning                       |
-| ------------ | ----------------------------- |
-| abs          | absolute value                |
-| coeff        | coefficient                   |
-| der          | derivative                    |
-| diff         | differentiate                 |
-| dist         | distance                      |
-| exp          | exponent                      |
-| max          | maximum                       |
-| poly         | polynomial                    |
-| px           | pixel                         |
-| re, im       | components of complex number  |
-| tol          | tolerance                     |
-| z, w         | denote complex numbers        |
+| Abbreviation | Meaning                               |
+| ------------ | ------------------------------------- |
+| abs          | absolute value                        |
+| arg          | the [argument][3] of a complex number |
+| cis          | a [mathematical notation][4]          |
+| coeff        | coefficient                           |
+| der          | derivative                            |
+| diff         | differentiate                         |
+| dist         | distance                              |
+| exp          | exponent                              |
+| max          | maximum                               |
+| poly         | polynomial                            |
+| pow          | power                                 |
+| px           | pixel                                 |
+| re, im       | the components of complex number      |
+| scl          | scale                                 |
+| tol          | tolerance                             |
+| z, w         | complex numbers                       |
 
 <!-- References and Footnotes -->
 
 [1]: https://rtoal.github.io/ple/
 [2]: https://en.wikipedia.org/wiki/Newton_fractal
+[3]: https://en.wikipedia.org/wiki/Argument_(complex_analysis)
+[4]: https://en.wikipedia.org/wiki/Cis_(mathematics)
 
 [^1]: Later I will consider expanding each of the program implementations to
   support command-line input.  This will entail writing a basic command-line
