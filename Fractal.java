@@ -8,6 +8,7 @@
 FILENAME: Fractal.java
 AUTHOR: Zachary Krepelka
 DATE: Friday, September 8th, 2023
+ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
 
 */
 
@@ -139,4 +140,4 @@ public class Fractal {
 
 } //class
 
-// UPDATED: Friday, November 24th, 2023   12:03 PM
+// UPDATED: Sunday, January 28th, 2024 at 8:57 AM

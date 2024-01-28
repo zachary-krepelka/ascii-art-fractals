@@ -9,6 +9,7 @@
 FILENAME: fractal.rb
 AUTHOR: Zachary Krepelka
 DATE: Sunday, October 29th, 2023
+ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
 
 =end
 
@@ -137,4 +138,4 @@ roots = [ \
 
 fractal(25, 256, 0.001, polynomial, colors, roots)
 
-#  UPDATED: Monday, December 4th, 2023   2:48 AM
+# UPDATED: Sunday, January 28th, 2024 at 9:01 AM

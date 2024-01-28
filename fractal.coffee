@@ -9,6 +9,7 @@
 FILENAME: fractal.coffee
 AUTHOR: Zachary Krepelka
 DATE: Wednesday, September 13th, 2023
+ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
 
 ###
 
@@ -99,4 +100,4 @@ roots = [
 
 fractal 25, 256, 0.001, [-1, 0, 0, 1], colors, roots
 
-#  UPDATED: Friday, November 24th, 2023   12:03 PM
+# UPDATED: Sunday, January 28th, 2024 at 8:58 AM

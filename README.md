@@ -4,6 +4,8 @@
 	FILENAME: README.md
 	AUTHOR: Zachary Krepelka
 	DATE: Wednesday, January 3rd, 2024
+	ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
+	UPDATED: Sunday, January 28th, 2024 at 8:57 AM
 -->
 
 My goal with this project is to *gain experience programming in different
@@ -20,9 +22,8 @@ The program that I write is intended for the command-line interface, and it's
 small enough to be contained within a single source file.  It takes no input[^1]
 and outputs a small ASCII art image with ANSI coloring.  Namely, the program
 generates a [Newton fractal][2] image corresponding to the 3<sup>rd</sup>-degree
-polynomial $p(z) = z^3 - 1$.[^2] All you really need to know is that a fractal
-is a special kind of mathematical pattern.  The output will look like this[^3],
-but in ASCII art:
+polynomial $p(z) = z^3 - 1$.[^2]  The output will look like this[^3], but in
+ASCII art:
 
 <p align="center"><img src="newton-fractal.png" width=25% height=25%></p>
 
@@ -48,9 +49,7 @@ scientific computation.
 
 # Abbreviations
 
-I use a number of abbreviations consistently throughout this project.  Most are
-self-explanatory.  I aim for brevity and simplicity in my variable-naming
-choices.
+I use a number of abbreviations consistently throughout this project.
 
 | Abbreviation | Meaning                               |
 | ------------ | ------------------------------------- |

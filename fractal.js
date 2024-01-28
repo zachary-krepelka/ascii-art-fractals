@@ -9,6 +9,7 @@
 FILENAME: fractal.js
 AUTHOR: Zachary Krepelka
 DATE: Sunday, September 10th, 2023
+ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
 
 */
 
@@ -112,4 +113,4 @@ fractal(
 	]
 );
 
-// UPDATED: Monday, December 4th, 2023   1:58 AM
+// UPDATED: Sunday, January 28th, 2024 at 8:59 AM
