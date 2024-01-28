@@ -69,7 +69,7 @@ def make_plane(px)
 	px.times do |i|
 		px.times do |j|
 			if j == 0
-				re, im = -1, 1
+				re = -im = 1
 			else
 				re += stride
 				im -= stride

@@ -36,7 +36,7 @@ makePlane = (px) ->
 	for i in [0...px]
 		for j in [0...px]
 			if j is 0
-				re = -1; im = 1
+				re = -im = 1
 			else
 				re += stride
 				im -= stride
