@@ -51,24 +51,24 @@ scientific computation.
 
 I use a number of abbreviations consistently throughout this project.
 
-| Abbreviation | Meaning                               |
-| ------------ | ------------------------------------- |
-| abs          | absolute value                        |
-| arg          | the [argument][3] of a complex number |
-| cis          | a [mathematical notation][4]          |
-| coeff        | coefficient                           |
-| der          | derivative                            |
-| diff         | differentiate                         |
-| dist         | distance                              |
-| exp          | exponent                              |
-| max          | maximum                               |
-| poly         | polynomial                            |
-| pow          | power                                 |
-| px           | pixel                                 |
-| re, im       | the components of complex number      |
-| scl          | scale                                 |
-| tol          | tolerance                             |
-| z, w         | complex numbers                       |
+| Abbreviation | Meaning                               | Variable | Function |
+| ------------ | ------------------------------------- | -------- | -------- |
+| abs          | absolute value                        | &cross;  | &check;  |
+| arg          | the [argument][3] of a complex number | &check;  | &check;  |
+| cis          | a [mathematical notation][4]          | &cross;  | &check;  |
+| coeff        | coefficient                           | &check;  | &cross;  |
+| der          | derivative                            | &check;  | &cross;  |
+| diff         | differentiate                         | &cross;  | &check;  |
+| dist         | distance                              | &cross;  | &check;  |
+| exp          | exponent                              | &check;  | &cross;  |
+| max          | maximum                               | &check;  | &cross;  |
+| poly         | polynomial                            | &check;  | &cross;  |
+| pow          | power                                 | &cross;  | &check;  |
+| px           | pixel                                 | &check;  | &cross;  |
+| re, im       | the components of complex number      | &check;  | &cross;  |
+| scl          | scale                                 | &cross;  | &check;  |
+| tol          | tolerance                             | &check;  | &cross;  |
+| z, w         | complex numbers                       | &check;  | &cross;  |
 
 <!-- References and Footnotes -->
 
