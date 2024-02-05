@@ -60,7 +60,7 @@ I use a number of abbreviations consistently throughout this project.
 | der          | derivative                            | &check;  | &cross;  |
 | diff         | differentiate                         | &cross;  | &check;  |
 | dist         | distance                              | &cross;  | &check;  |
-| dot          | [dot product][?]                      | &cross;  | &check;  |
+| dot          | [dot product][5]                      | &cross;  | &check;  |
 | exp          | exponent                              | &check;  | &cross;  |
 | max          | maximum                               | &check;  | &cross;  |
 | poly         | polynomial                            | &check;  | &cross;  |
