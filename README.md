@@ -12,7 +12,7 @@ My goal with this project is to *gain experience programming in different
 languages.*  In this project, I implement the same program over and over again,
 but each time, I do it in a different programming language.  The program is
 simple enough for me to write on a weekend once I've learned the rudiments of a
-language, but it's far more rewarding than a trivial `Hello, World!` program.  I
+language, but it's far more rewarding than a trivial 'Hello, World!' program.  I
 was inspired to pursue this project after reading [Programming Language
 Explorations][1].
 
@@ -46,7 +46,8 @@ Each language is used once for the same purpose and in the same manner, so in
 this circumstance, the language bar seems to suggest the brevity of each
 language for this particular task. You will notice that Julia occupies the
 smallest portion of the bar. Julia is well suited for mathematical and
-scientific computation.
+scientific computation. (It has since been swallowed up into the 'other'
+category.)
 
 # Abbreviations
 
