@@ -1,11 +1,11 @@
-# ascii-art-fractals
+# ASCII Art Fractals
 
 <!--
 	FILENAME: README.md
 	AUTHOR: Zachary Krepelka
 	DATE: Wednesday, January 3rd, 2024
 	ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-	UPDATED: Sunday, January 28th, 2024 at 8:57 AM
+	UPDATED: Monday, February 5th, 2024 at 12:54 AM
 -->
 
 My goal with this project is to *gain experience programming in different
@@ -39,6 +39,7 @@ make this list longer in the coming year.
 5. Python
 6. Ruby
 7. Julia
+8. PHP
 
 It's interesting to observe GitHub's language bar on the side of the screen.
 Each language is used once for the same purpose and in the same manner, so in
