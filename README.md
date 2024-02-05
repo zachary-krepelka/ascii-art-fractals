@@ -60,6 +60,7 @@ I use a number of abbreviations consistently throughout this project.
 | der          | derivative                            | &check;  | &cross;  |
 | diff         | differentiate                         | &cross;  | &check;  |
 | dist         | distance                              | &cross;  | &check;  |
+| dot          | [dot product][?]                      | &cross;  | &check;  |
 | exp          | exponent                              | &check;  | &cross;  |
 | max          | maximum                               | &check;  | &cross;  |
 | poly         | polynomial                            | &check;  | &cross;  |
@@ -76,6 +77,7 @@ I use a number of abbreviations consistently throughout this project.
 [2]: https://en.wikipedia.org/wiki/Newton_fractal
 [3]: https://en.wikipedia.org/wiki/Argument_(complex_analysis)
 [4]: https://en.wikipedia.org/wiki/Cis_(mathematics)
+[5]: https://en.wikipedia.org/wiki/Dot_product
 
 [^1]: Later I will consider expanding each of the program implementations to
   support command-line input.  This will entail writing a basic command-line
