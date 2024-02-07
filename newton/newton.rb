@@ -6,7 +6,7 @@
 |_|_\\_,_|_.__/\_, |
 	       |__/
 
-FILENAME: fractal.rb
+FILENAME: newton.rb
 AUTHOR: Zachary Krepelka
 DATE: Sunday, October 29th, 2023
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
@@ -138,4 +138,4 @@ roots = [ \
 
 fractal(25, 256, 0.001, polynomial, colors, roots)
 
-# UPDATED: Sunday, January 28th, 2024 at 9:01 AM
+# UPDATED: Wednesday, February 7th, 2024 at 1:53 AM

@@ -5,7 +5,7 @@
 | || | || | | / _` |
  \__/ \_,_|_|_\__,_|
 
-FILENAME: fractal.jl
+FILENAME: newton.jl
 AUTHOR: Zachary Krepelka
 DATE: Saturday, December 2nd, 2023
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
@@ -78,4 +78,4 @@ roots = [ 1
 
 fractal(25, 256, 0.001, polynomial, colors, roots)
 
-# UPDATED: Sunday, January 28th, 2024 at 8:58 AM
+# UPDATED: Wednesday, February 7th, 2024 at 1:54 AM

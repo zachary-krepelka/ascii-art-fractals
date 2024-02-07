@@ -5,7 +5,7 @@
 | ' </ _ \  _| | | ' \
 |_|\_\___/\__|_|_|_||_|
 
-FILENAME: fractal.kt
+FILENAME: newton.kt
 AUTHOR: Zachary Krepelka
 ATE: Tuesday, February 6th, 2024
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
@@ -197,4 +197,4 @@ fun main() {
 
 } // entry
 
-// UPDATED: Wednesday, February 7th, 2024 at 1:07 AM
+// UPDATED: Wednesday, February 7th, 2024 at 1:53 AM

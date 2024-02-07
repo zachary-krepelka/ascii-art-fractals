@@ -6,7 +6,7 @@
 |_|  \_, |\__|_||_\___/_||_|
      |__/
 
-FILENAME: fractal.py
+FILENAME: newton.py
 AUTHOR: Zachary Krepelka
 DATE: Saturday, October 21st, 2023
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
@@ -102,4 +102,4 @@ roots = (
 
 fractal(25, 256, 0.001, polynomial, colors, roots)
 
-# UPDATED: Sunday, January 28th, 2024 at 9:01 AM
+# UPDATED: Wednesday, February 7th, 2024 at 1:53 AM

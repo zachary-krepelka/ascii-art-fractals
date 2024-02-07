@@ -5,7 +5,7 @@
 |  _/ __ |  _/
 |_| |_||_|_|
 
-FILENAME: fractal.php
+FILENAME: newton.php
 AUTHOR: Zachary Krepelka
 DATE: Saturday, January 27th, 2024
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
@@ -28,7 +28,7 @@ function fractal($px, $max, $tol, $poly, $colors, $roots) {
 				} // foreach
 				$z = newton($poly, $der, $z);
 			} // for
-		} //for
+		} // for
 		echo "\n";
 	} // for
 } // func
@@ -128,4 +128,4 @@ fractal(
 	]
 );
 
-// UPDATED: Monday, February 5th, 2024 at 12:47 AM
+// UPDATED: Wednesday, February 7th, 2024 at 1:53 AM

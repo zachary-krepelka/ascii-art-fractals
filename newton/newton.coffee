@@ -6,7 +6,7 @@
  \___\___/_| |_| \___\___|___/\__|_| |_| .__/\__|
                                        |_|
 
-FILENAME: fractal.coffee
+FILENAME: newton.coffee
 AUTHOR: Zachary Krepelka
 DATE: Wednesday, September 13th, 2023
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
@@ -100,4 +100,4 @@ roots = [
 
 fractal 25, 256, 0.001, [-1, 0, 0, 1], colors, roots
 
-# UPDATED: Sunday, January 28th, 2024 at 8:58 AM
+# UPDATED: Wednesday, February 7th, 2024 at 1:53 AM

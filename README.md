@@ -25,7 +25,7 @@ generates a [Newton fractal][2] image corresponding to the 3<sup>rd</sup>-degree
 polynomial $p(z) = z^3 - 1$.[^2]  The output will look like this[^3], but in
 ASCII art:
 
-<p align="center"><img src="newton-fractal.png" width=25% height=25%></p>
+<p align="center"><img src="images/newton-fractal.png" width=25% height=25%></p>
 
 # Featured Languages
 

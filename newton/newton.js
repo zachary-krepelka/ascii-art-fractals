@@ -6,7 +6,7 @@
  \__/\__,_|\_/\__,_|___/\__|_| |_| .__/\__|
                                  |_|
 
-FILENAME: fractal.js
+FILENAME: newton.js
 AUTHOR: Zachary Krepelka
 DATE: Sunday, September 10th, 2023
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
@@ -24,14 +24,14 @@ function fractal(px, max, tol, poly, colors, roots) {
 					if (dist(z, roots[l]) <= tol) {
 						process.stdout.write(colors[l]);
 						break LOOP;
-					} //if
-				} //for
+					} // if
+				} // for
 				z = newton(poly, der, z);
-			} //for
-		} //for
+			} // for
+		} // for
 		process.stdout.write("\n");
-	} //for
-} //func
+	} // for
+} // func
 
 function makePlane(px) {
 	let re = 0, im = 0;
@@ -44,13 +44,13 @@ function makePlane(px) {
 			} else {
 				re += stride;
 				im -= stride;
-			} //if
+			} // if
 			plane[i][j][0] = re;
 			plane[j][i][1] = im;
-		} //for
-	} //for
+		} // for
+	} // for
 	return plane;
-} //func
+} // func
 
 function array3D(x, y, z) {
 	const arr = [];
@@ -60,9 +60,9 @@ function array3D(x, y, z) {
 			arr[i].push([]);
 			for (let k = 0; k < z; k++) {
 				arr[i][j][k] = null;
-			} //for
-		} //for
-	} //for
+			} // for
+		} // for
+	} // for
 	return arr;
 } // func
 
@@ -113,4 +113,4 @@ fractal(
 	]
 );
 
-// UPDATED: Sunday, January 28th, 2024 at 8:59 AM
+// UPDATED: Wednesday, February 7th, 2024 at 1:53 AM

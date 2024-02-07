@@ -5,7 +5,7 @@
 | |_| || / _` |
 |____\_,_\__,_|
 
-FILENAME: fractal.lua
+FILENAME: newton.lua
 AUTHOR: Zachary Krepelka
 DATE: Tuesday, September 26th, 2023
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
@@ -193,4 +193,4 @@ roots = {
 
 fractal(25, 256, 0.001, {-1, 0, 0, 1}, colors, roots)
 
--- UPDATED: Sunday, January 28th, 2024 at 8:59 AM
+-- UPDATED: Wednesday, February 7th, 2024 at 1:53 AM
