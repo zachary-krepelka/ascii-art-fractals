@@ -40,6 +40,7 @@ make this list longer in the coming year.
 6. Ruby
 7. Julia
 8. PHP
+9. Kotlin
 
 It's interesting to observe GitHub's language bar on the side of the screen.
 Each language is used once for the same purpose and in the same manner, so in
