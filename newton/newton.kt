@@ -8,7 +8,9 @@
 FILENAME: newton.kt
 AUTHOR: Zachary Krepelka
 ATE: Tuesday, February 6th, 2024
+ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
+UPDATED: Tuesday, March 19th, 2024 at 12:03 AM
 
 */
 
@@ -179,7 +181,7 @@ fun main() {
 
 	val poly = intArrayOf(-1, 0, 0, 1)
 
-	val colors = arrayOf( // uses ANSI escape codes
+	val colors = arrayOf( // uses ANSI escape sequences
 
 		"\u001b[41m  \u001b[0m", // red
 		"\u001b[42m  \u001b[0m", // green
@@ -196,5 +198,3 @@ fun main() {
 	fractal(25, 256, 0.01, poly, colors, roots)
 
 } // entry
-
-// UPDATED: Wednesday, February 7th, 2024 at 1:53 AM

@@ -8,7 +8,9 @@
 FILENAME: newton.jl
 AUTHOR: Zachary Krepelka
 DATE: Saturday, December 2nd, 2023
+ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
+UPDATED: Tuesday, March 19th, 2024 at 12:01 AM
 
 =#
 
@@ -65,10 +67,10 @@ dist(z, w) = abs(z - w)
 polynomial = [-1, 0, 0, 1]
 
 colors = [
-	  "\033[41m  \033[0m"
-	  "\033[42m  \033[0m"
-	  "\033[44m  \033[0m"
-	  "\033[40m  \033[0m" # The end is a default value.
+	  "\033[41m  \033[0m" # Red
+	  "\033[42m  \033[0m" # Green
+	  "\033[44m  \033[0m" # Blue
+	  "\033[40m  \033[0m" # Black, to signify the void
 ]
 
 roots = [ 1
@@ -77,5 +79,3 @@ roots = [ 1
 ]
 
 fractal(25, 256, 0.001, polynomial, colors, roots)
-
-# UPDATED: Wednesday, February 7th, 2024 at 1:54 AM

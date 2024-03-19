@@ -8,7 +8,9 @@
 FILENAME: newton.php
 AUTHOR: Zachary Krepelka
 DATE: Saturday, January 27th, 2024
+ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
+UPDATED: Tuesday, March 19th, 2024 at 12:04 AM
 
 */
 
@@ -127,5 +129,3 @@ fractal(
 		[-0.5, -0.8660254037844386]
 	]
 );
-
-// UPDATED: Wednesday, February 7th, 2024 at 1:53 AM

@@ -8,7 +8,9 @@
 FILENAME: newton.lua
 AUTHOR: Zachary Krepelka
 DATE: Tuesday, September 26th, 2023
+ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
+UPDATED: Tuesday, March 19th, 2024 at 12:03 AM
 
 --]]
 
@@ -192,5 +194,3 @@ roots = {
 }
 
 fractal(25, 256, 0.001, {-1, 0, 0, 1}, colors, roots)
-
--- UPDATED: Wednesday, February 7th, 2024 at 1:53 AM

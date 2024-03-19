@@ -9,7 +9,9 @@
 FILENAME: newton.py
 AUTHOR: Zachary Krepelka
 DATE: Saturday, October 21st, 2023
+ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
+UPDATED: Tuesday, March 19th, 2024 at 12:05 AM
 
 '''
 
@@ -101,5 +103,3 @@ roots = (
 	complex(-0.5, -0.8660254037844386))
 
 fractal(25, 256, 0.001, polynomial, colors, roots)
-
-# UPDATED: Wednesday, February 7th, 2024 at 1:53 AM

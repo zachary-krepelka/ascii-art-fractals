@@ -4,8 +4,9 @@
 	FILENAME: README.md
 	AUTHOR: Zachary Krepelka
 	DATE: Wednesday, January 3rd, 2024
+	ABOUT: a project for the exploration of programming languages
 	ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-	UPDATED: Monday, February 5th, 2024 at 12:54 AM
+	UPDATED: Tuesday, March 19th, 2024 at 12:12 AM
 -->
 
 My goal with this project is to *gain experience programming in different
