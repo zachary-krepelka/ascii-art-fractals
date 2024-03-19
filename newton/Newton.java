@@ -14,7 +14,7 @@ UPDATED: Tuesday, March 19th, 2024 at 12:00 AM
 
 */
 
-public class Fractal {
+public class Newton {
 
 	private static void fractal(
 		int px,
