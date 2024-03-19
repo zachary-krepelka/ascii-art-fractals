@@ -7,7 +7,7 @@
 
 FILENAME: newton.kt
 AUTHOR: Zachary Krepelka
-ATE: Tuesday, February 6th, 2024
+DATE: Tuesday, February 6th, 2024
 ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
 UPDATED: Tuesday, March 19th, 2024 at 12:03 AM
