@@ -6,7 +6,7 @@
 	DATE: Wednesday, January 3rd, 2024
 	ABOUT: a project for the exploration of programming languages
 	ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-	UPDATED: Tuesday, March 19th, 2024 at 12:12 AM
+	UPDATED: Thursday, March 28th, 2024 at 10:13 PM
 -->
 
 My goal with this project is to *gain experience programming in different
@@ -17,7 +17,7 @@ language, but it's far more rewarding than a trivial 'Hello, World!' program.  I
 was inspired to pursue this project after reading [Programming Language
 Explorations][1].
 
-# Program Introduction
+## Program Introduction
 
 The program that I write is intended for the command-line interface, and it's
 small enough to be contained within a single source file.  It takes no input[^1]
@@ -28,7 +28,7 @@ ASCII art:
 
 <p align="center"><img src="images/newton-fractal.png" width=25% height=25%></p>
 
-# Featured Languages
+## Featured Languages
 
 They are listed in the order that I wrote the programs with them.  I hope to
 make this list longer in the coming year.
@@ -52,7 +52,7 @@ smallest portion of the bar. Julia is well suited for mathematical and
 scientific computation. (It has since been swallowed up into the 'other'
 category.)
 
-# Abbreviations
+## Abbreviations
 
 I use a number of abbreviations consistently throughout this project.
 
