@@ -7,6 +7,7 @@
 	PATH: ascii-art-fractals/newton/README.md
 	ABOUT: a project for the exploration of programming languages
 	ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
+	UPDATED: Saturday, February 22nd, 2025 at 9:59 PM
 -->
 
 This directory contains various implementations of a [console application][1]
@@ -22,6 +23,15 @@ integer polynomial of a single variable.  The 3<sup>rd</sup>-degree polynomial
 is passed as a hard-coded argument to a function accepting the general case as a
 parameter.  Later I will consider expanding each of the program implementations
 to support command-line input.
+
+## Demo
+
+To sample the output of these programs, copy-and-paste this command into your
+terminal.
+
+```
+wget -qO- https://raw.githubusercontent.com/zachary-krepelka/ascii-art-fractals/refs/heads/main/docs/images/newton.ans
+```
 
 ## Featured Languages
 
