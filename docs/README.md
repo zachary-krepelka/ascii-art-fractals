@@ -6,7 +6,7 @@
 	DATE: Wednesday, January 3rd, 2024
 	ABOUT: a project for the exploration of programming languages
 	ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-	UPDATED: Saturday, February 22nd, 2025 at 9:40 PM
+	UPDATED: Sunday, February 23rd, 2025 at 3:02 AM
 -->
 
 This repository contains a class of console applications implemented across
@@ -76,7 +76,7 @@ future.
 
 I was inspired to pursue this project after reading [Programming Language
 Explorations][3], a programming book which showcases the same trio of programs
-implemented across a variety of different languages.  This repository began as I
+implemented across a variety of different languages.  This repository began as a
 side project while I was taking a class called 'Programming Languages' taught by
 Dr. Dan Wetklow at Saint Francis University.
 
