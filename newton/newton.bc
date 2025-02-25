@@ -1,0 +1,253 @@
+#!/bin/bc -ql
+
+/*
+
+ _             _              _         _      _
+| |__  __ _ __(_)__   __ __ _| |__ _  _| |__ _| |_ ___ _ _
+| '_ \/ _` (_-< / _| / _/ _` | / _| || | / _` |  _/ _ \ '_|
+|_.__/\__,_/__/_\__| \__\__,_|_\__|\_,_|_\__,_|\__\___/_|
+
+                                      GNU implementation
+FILENAME: newton.bc
+AUTHOR: Zachary Krepelka
+DATE: Wednesday, January 1st, 2025
+ABOUT: a project for the exploration of programming languages
+ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
+UPDATED: Thursday, January 2nd, 2025 at 1:20 AM
+
+*/
+
+define signum(number) {
+
+	if (number > 0) return  1
+	if (number < 0) return -1
+	                return  0
+}
+
+define atan2(y, x) {
+
+	auto result
+
+	if (x == 0 && y == 0) return
+
+	if (x == 0) return a(1) * 2 * signum(y)
+
+	result = a(y/x)
+
+	if (x < 0) result += ((y < 0) && (-1) || (1)) * 4 * a(1)
+
+	return result
+
+} # https://en.wikipedia.org/wiki/Atan2#Definition_and_computation
+
+define dot(z[], w[]) {
+	return z[0] * w[0] + z[1] * w[1]
+}
+
+define void resize(multiplier, multiplicand[], *product[]) {
+	product[0] = multiplier * multiplicand[0]
+	product[1] = multiplier * multiplicand[1]
+}
+
+define void add(augend[], addend[], *sum[]) {
+	sum[0] = augend[0] + addend[0]
+	sum[1] = augend[1] + addend[1]
+}
+
+define void subtract(minuend[], subtrahend[], *difference[]) {
+	resize(-1, subtrahend[], subtrahend[])
+	add(minuend[], subtrahend[], difference[])
+}
+
+define void divide(dividend[], divisor[], *quotient[]) {
+	denominator = dot(divisor[], divisor[])
+	if (denominator == 0) return
+	quotient[0] = dot(dividend[], divisor[])
+	quotient[1] = dividend[1] * divisor[0] - dividend[0] * divisor[1]
+	resize(1 / denominator, quotient[], quotient[])
+}
+
+define abs(z[]) {
+	return sqrt(dot(z[], z[]))
+}
+
+define dist(z[], w[]) {
+	auto diff[]
+	subtract(z[], w[], diff[])
+	return abs(diff[])
+}
+
+define void cis(arg, *result[]) {
+	result[0] = c(arg)
+	result[1] = s(arg)
+}
+
+define arg(z[]) {
+	return atan2(z[1], z[0])
+}
+
+define void exponentiate(base[], exponent, *power[]) {
+	cis(exponent * arg(base[]), power[])
+	resize(abs(base[]) ^ exponent, power[], power[])
+}
+
+define void eval(deg, poly[], z[], *result[]) {
+	auto i, tmp[]
+	for (i = 0; i < deg + 1; i++) {
+		exponentiate(z[], i, tmp[]);
+		resize(poly[i], tmp[], tmp[]);
+		add(tmp[], result[], result[]);
+	}
+}
+
+define void diff(deg, poly[], *der[]) {
+	auto i
+	for (i = 0; i < deg; i++)
+		der[i] = poly[i + 1] * (i + 1)
+}
+
+define void newton(deg, poly[], der[], guess[], *result[]) {
+
+	auto numerator[], denominator[], quotient[]
+	eval(deg, poly[], guess[], numerator[])
+	eval(deg - 1, der[], guess[], denominator[])
+	divide(numerator[], denominator[], quotient[])
+	subtract(guess[], quotient[], result[])
+}
+
+define array2d_index(width, i, j) {
+	return j + width * i
+}
+
+define array2d_get(*arr[], width, i, j) {
+	return arr[array2d_index(width, i, j)]
+}
+
+define void array2d_set(*arr[], width, i, j, value) {
+	arr[array2d_index(width, i, j)] = value
+}
+
+define array3d_index(height, width, i, j, k) {
+	return j + width * i + width * height * k
+}
+
+define array3d_get(*arr[], height, width, i, j, k) {
+	return arr[array3d_index(height, width, i, j, k)]
+}
+
+define void array3d_set(*arr[], height, width, i, j, k, value) {
+	arr[array3d_index(height, width, i, j, k)] = value
+}
+
+define void extract1d(*arr[], i, *complex_number[]) {
+	complex_number[0] = array2d_get(arr[], 2, i, 0)
+	complex_number[1] = array2d_get(arr[], 2, i, 1)
+}
+
+define void extract2d(*arr[], height, width, i, j, *complex_number[]) {
+	complex_number[0] = array3d_get(arr[], height, width, i, j, 0)
+	complex_number[1] = array3d_get(arr[], height, width, i, j, 1)
+}
+
+define void make_plane(px, *result[]) {
+	auto i, j, re, im, stride
+	stride = 2 / (px - 1)
+	for (i = 0; i < px; i++) {
+		for (j = 0; j < px; j++) {
+			if (j == 0) {
+				re = -1;
+				im =  1;
+			} else {
+				re += stride;
+				im -= stride;
+			} # if
+			array3d_set(result[], px, px, i, j, 0, re)
+			array3d_set(result[], px, px, j, i, 1, im)
+		} # for
+	} # for
+} # def
+
+obase = 16 # The input polynomial can be up to degree sixteen.
+
+define void fractal(px, max, tol, deg, poly[], roots[]) {
+	auto der[], plane[], i, j, converged, z[], k, l, root[]
+	diff(deg, poly[], der[])
+	make_plane(px, plane[])
+	for (i = 0; i < px; i++) {
+		for (j = 0; j < px; j++) {
+			converged = 0
+			extract2d(plane[], px, px, i, j, z[])
+			for (k = 0; k < max; k++) {
+				for (l = 0; l < deg; l++) {
+					extract1d(roots[], l, root[])
+					if (dist(z[], root[]) < tol) {
+						converged = 1
+						print l + 1, last
+					} # if
+				} # for
+				if (converged) break
+				newton(deg, poly[], der[], z[], z[])
+			} # for
+			if (!converged) print 0, last
+		} # for
+		print "\n"
+	} # for
+} # def
+
+deg = 3
+poly[0] = -1
+poly[deg] =  1
+array2d_set(roots[], 2, 0, 0, 1)
+array2d_set(roots[], 2, 0, 1, 0)
+array2d_set(roots[], 2, 1, 0, -.5)
+array2d_set(roots[], 2, 1, 1, sqrt(3) / 2)
+array2d_set(roots[], 2, 2, 0, -.5)
+array2d_set(roots[], 2, 2, 1, -sqrt(3) / 2)
+
+fractal(25, 256, 0.001, deg, poly[], roots[])
+
+quit
+
+/*
+
+The bc programming language does not support
+ANSI escape sequences.  To colorize the output
+of this program, pipe it into this sed script.
+
+	01   #!/bin/sed -f
+	02   y/0123/?abc/
+	03   s/\(?\+\)/\d27[30m\1\d27[0m/g
+	04   s/\(a\+\)/\d27[41m\1\d27[0m/g
+	05   s/\(b\+\)/\d27[42m\1\d27[0m/g
+	06   s/\(c\+\)/\d27[44m\1\d27[0m/g
+	07   s/[abc?]/ /g
+
+Use the command
+
+	bc -lq newton.bc | sed -f colorize.sed
+
+The sed script can be extended to support higher
+degree input polynomials. Here is a quick
+example having no thought put into an
+appropriate colorscheme.
+
+	01   #!/bin/sed -f
+	02   y/0123456789/?abcdefghi/
+	03   s/\(?\+\)/\d27[40m\1\d27[0m/g
+	04   s/\(a\+\)/\d27[41m\1\d27[0m/g
+	05   s/\(b\+\)/\d27[42m\1\d27[0m/g
+	06   s/\(c\+\)/\d27[43m\1\d27[0m/g
+	07   s/\(d\+\)/\d27[44m\1\d27[0m/g
+	08   s/\(e\+\)/\d27[45m\1\d27[0m/g
+	09   s/\(f\+\)/\d27[46m\1\d27[0m/g
+	10   s/\(g\+\)/\d27[47m\1\d27[0m/g
+	11   s/\(h\+\)/\d27[100m\1\d27[0m/g
+	12   s/\(i\+\)/\d27[101m\1\d27[0m/g
+	13   s/\(A\+\)/\d27[102m\1\d27[0m/g
+	14   s/\(B\+\)/\d27[103m\1\d27[0m/g
+	15   s/\(C\+\)/\d27[104m\1\d27[0m/g
+	16   s/\(D\+\)/\d27[105m\1\d27[0m/g
+	17   s/\(E\+\)/\d27[106m\1\d27[0m/g
+	18   s/\(F\+\)/\d27[107m\1\d27[0m/g
+	19   s/[abcdefghiABCDEF?]/ /g
+*/

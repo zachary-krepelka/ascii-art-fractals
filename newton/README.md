@@ -7,7 +7,7 @@
 	PATH: ascii-art-fractals/newton/README.md
 	ABOUT: a project for the exploration of programming languages
 	ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-	UPDATED: Sunday, February 23rd, 2025 at 2:46 AM
+	UPDATED: Sunday, February 23rd, 2025 at 3:26 AM
 -->
 
 This directory contains various implementations of a [console application][1]
@@ -61,6 +61,7 @@ make this list longer in the coming year.
  8. PHP
  9. Kotlin
 10. MATLAB
+11. bc
 
 [1]: https://en.wikipedia.org/wiki/Console_application
 [2]: https://en.wikipedia.org/wiki/Newton_fractal

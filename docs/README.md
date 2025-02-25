@@ -6,7 +6,7 @@
 	DATE: Wednesday, January 3rd, 2024
 	ABOUT: a project for the exploration of programming languages
 	ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-	UPDATED: Sunday, February 23rd, 2025 at 3:02 AM
+	UPDATED: Sunday, February 23rd, 2025 at 3:27 AM
 -->
 
 This repository contains a class of console applications implemented across
@@ -69,6 +69,7 @@ future.
 | PHP          | &check; |            |            |
 | Kotlin       | &check; |            |            |
 | MATLAB       | &check; |            |            |
+| bc           | &check; |            |            |
 
 </div>
 

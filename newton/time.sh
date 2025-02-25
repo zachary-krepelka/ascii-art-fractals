@@ -3,7 +3,7 @@
 # FILENAME: time.sh
 # AUTHOR: Zachary Krepelka
 # DATE: Tuesday, March 19th, 2024
-# UPDATED: Wednesday, July 10th, 2024 at 9:23 PM
+# UPDATED: Friday, February 21st, 2025 at 8:22 AM
 # ABOUT: a project for the exploration of programming languages
 # ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
 
@@ -18,6 +18,7 @@ langs=(
 	'PHP'
 	'Kotlin'
 	'MATLAB'
+	'bc'
 )
 
 for lang in ${langs[@]}
