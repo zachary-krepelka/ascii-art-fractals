@@ -3,7 +3,7 @@
 # DATE: Wednesday, July 10th, 2024
 # ABOUT: a project for the exploration of programming languages
 # ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-# UPDATED: Sunday, October 26th, 2025 at 1:40 PM
+# UPDATED: Sunday, October 26th, 2025 at 1:52 PM
 
 # Goals ------------------------------------------------------------------- {{{1
 
@@ -57,5 +57,13 @@ Newton.class: newton.java
 
 NewtonKt.class: newton.kt
 	kotlinc newton.kt
+
+# Housekeeping ------------------------------------------------------------ {{{1
+
+.PHONY: clean
+
+clean:
+	rm -rf META-INF/
+	find . -type f -name '*.class' -exec rm {} \;
 
 # vim: tw=80 ts=8 sw=8 noet fdm=marker
