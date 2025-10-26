@@ -5,12 +5,12 @@
 | || / _` \ V / _` |
  \__/\__,_|\_/\__,_|
 
-FILENAME: Newton.java
+FILENAME: newton.java
 AUTHOR: Zachary Krepelka
 DATE: Friday, September 8th, 2023
 ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-UPDATED: Tuesday, March 19th, 2024 at 12:00 AM
+UPDATED: Sunday, October 26th, 2025 at 11:41 AM
 
 */
 
@@ -26,19 +26,24 @@ class Newton {
 	) {
 		int[] der = diff(poly);
 		double[][][] plane = makePlane(px);
+		String unresolved = colors[colors.length - 1];
 		for (int i = 0; i < px; i++) {
 			for (int j = 0; j < px; j++) {
+				boolean converged = false;
 				double[] z = plane[i][j]; LOOP:
 				for (int k = 0; k < max; k++) {
 					for (int l = 0; l < roots.length; l++) {
 						if (dist(z, roots[l]) <= tol) {
+							converged = true;
 							System.out.print(
-							colors[l]);
+								colors[l]);
 							break LOOP;
 						} // if
 					} // for
 					z = newton(poly, der, z);
 				} // for
+				if (!converged)
+					System.out.print(unresolved);
 			} // for
 		System.out.println();
 		} // for
@@ -131,7 +136,8 @@ class Newton {
 			new String[] { // uses ANSI escape codes
 				"\033[41m  \033[0m",  // red
 				"\033[42m  \033[0m",  // green
-				"\033[44m  \033[0m"}, // blue
+				"\033[44m  \033[0m",  // blue
+				"\033[40m  \033[0m"}, // black
 			new double[][] {
 				{ 1  ,  0                 },
 				{-0.5,  0.8660254037844386},

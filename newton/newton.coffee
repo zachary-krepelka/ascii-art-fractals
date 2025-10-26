@@ -11,13 +11,14 @@ AUTHOR: Zachary Krepelka
 DATE: Wednesday, September 13th, 2023
 ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-UPDATED: Tuesday, March 19th, 2024 at 12:00 AM
+UPDATED: Sunday, October 26th, 2025 at 11:36 AM
 
 ###
 
 fractal = (px, max, tol, poly, colors, roots) ->
 	der = diff poly
 	plane = makePlane px
+	[..., unresolved] = colors
 	for i in [0...px]
 		for j in [0...px]
 			z = plane[i][j]
@@ -30,6 +31,7 @@ fractal = (px, max, tol, poly, colors, roots) ->
 						break
 				break if converged
 				z = newton poly, der, z
+			process.stdout.write unresolved if ! converged
 		process.stdout.write "\n"
 
 makePlane = (px) ->
@@ -92,6 +94,7 @@ colors = [ # uses ANSI escape codes
 	"\x1B[41m  \x1B[0m" # red
 	"\x1B[42m  \x1B[0m" # green
 	"\x1B[44m  \x1B[0m" # blue
+	"\x1B[40m  \x1B[0m" # black to signify the void
 ]
 
 roots = [

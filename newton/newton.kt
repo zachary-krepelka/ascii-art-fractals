@@ -10,7 +10,7 @@ AUTHOR: Zachary Krepelka
 DATE: Tuesday, February 6th, 2024
 ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-UPDATED: Tuesday, March 19th, 2024 at 12:03 AM
+UPDATED: Sunday, October 26th, 2025 at 12:56 PM
 
 */
 
@@ -32,19 +32,24 @@ fun fractal(
 
 	val der = diff(poly)
 	val plane = makePlane(px)
+	val unresolved = colors.last()
 
 	for (i in 0 until px) {
 		for (j in 0 until px) {
+			var converged = false
 			var z = plane[i][j]
 			loop@ for (k in 0 until max) {
 				for ((l, root) in roots.withIndex()) {
 					if (dist(z, root) <= tol) {
+						converged = true
 						print(colors[l])
 						break@loop
 					} // if
 				} // for
 				z = newton(poly, der, z)
 			} // for
+			if (!converged)
+				print(unresolved)
 		} // for
 		println()
 	} // for
@@ -185,7 +190,8 @@ fun main() {
 
 		"\u001b[41m  \u001b[0m", // red
 		"\u001b[42m  \u001b[0m", // green
-		"\u001b[44m  \u001b[0m"  // blue
+		"\u001b[44m  \u001b[0m", // blue
+		"\u001b[40m  \u001b[0m"  // black to signify the void
 	)
 
 	val roots = arrayOf(

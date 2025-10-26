@@ -10,7 +10,7 @@ AUTHOR: Zachary Krepelka
 DATE: Saturday, December 2nd, 2023
 ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-UPDATED: Tuesday, March 19th, 2024 at 12:01 AM
+UPDATED: Sunday, October 26th, 2025 at 12:38 PM
 
 =#
 
@@ -20,6 +20,7 @@ function fractal(px, max, tol, poly, colors, roots)
 
 	stride = 2 / (px - 1)
 	plane = [ a + b * im for b in 1:-stride:-1, a in -1:stride:1 ]
+	unresolved = colors[end]
 
 	for i in 1:px
 		for j in 1:px
@@ -37,14 +38,14 @@ function fractal(px, max, tol, poly, colors, roots)
 				converged && break
 				z = newton(poly, der, z)
 			end
-			!converged && print(colors[end]) # Default
+                        !converged && print(unresolved)
 		end
 		println()
 	end
 end
 
 function newton(poly, der, guess)
-	guess - eval(poly, guess) / eval(der, guess)
+	guess - evall(poly, guess) / evall(der, guess)
 end
 
 function diff(poly)
@@ -54,7 +55,7 @@ function diff(poly)
 	end
 end
 
-function eval(poly, z)
+function evall(poly, z)
 	mapreduce(+, enumerate(poly)) do term
 	    exp, coeff = term
 	    exp -= 1
@@ -66,11 +67,11 @@ dist(z, w) = abs(z - w)
 
 polynomial = [-1, 0, 0, 1]
 
-colors = [
-	  "\033[41m  \033[0m" # Red
-	  "\033[42m  \033[0m" # Green
-	  "\033[44m  \033[0m" # Blue
-	  "\033[40m  \033[0m" # Black, to signify the void
+colors = [ # uses ANSI escape codes
+	  "\033[41m  \033[0m" # red
+	  "\033[42m  \033[0m" # green
+	  "\033[44m  \033[0m" # blue
+	  "\033[40m  \033[0m" # black to signify the void
 ]
 
 roots = [ 1

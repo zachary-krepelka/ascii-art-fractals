@@ -1,4 +1,4 @@
-'''
+r'''
 
  ___      _   _
 | _ \_  _| |_| |_  ___ _ _
@@ -11,7 +11,7 @@ AUTHOR: Zachary Krepelka
 DATE: Saturday, October 21st, 2023
 ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-UPDATED: Tuesday, March 19th, 2024 at 12:05 AM
+UPDATED: Sunday, October 26th, 2025 at 12:03 PM
 
 '''
 
@@ -19,6 +19,7 @@ def fractal(px, max, tol, poly, colors, roots):
 
 	der = diff(poly)
 	plane = makePlane(px)
+	unresolved = colors[-1]
 
 	for i in range(px):
 		for j in range(px):
@@ -32,6 +33,8 @@ def fractal(px, max, tol, poly, colors, roots):
 						break
 				if converged: break
 				z = newton(poly, der, z)
+			if not converged:
+				print(unresolved, end="")
 		print()
 
 def newton(poly, der, guess):
@@ -95,7 +98,12 @@ def array(*shape):
 
 polynomial = (-1, 0, 0, 1)
 
-colors = "\033[41m  \033[0m", "\033[42m  \033[0m", "\033[44m  \033[0m"
+colors = ( # uses ANSI escape codes
+	"\033[41m  \033[0m", # red
+	"\033[42m  \033[0m", # green
+	"\033[44m  \033[0m", # blue
+	"\033[40m  \033[0m"  # black to signify the void
+)
 
 roots = (
 	complex(1   ,  0                 ),

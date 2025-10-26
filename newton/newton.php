@@ -10,7 +10,7 @@ AUTHOR: Zachary Krepelka
 DATE: Saturday, January 27th, 2024
 ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-UPDATED: Tuesday, March 19th, 2024 at 12:04 AM
+UPDATED: Sunday, October 26th, 2025 at 12:43 PM
 
 */
 
@@ -18,18 +18,23 @@ function fractal($px, $max, $tol, $poly, $colors, $roots) {
 	global $dist;
 	$der = diff($poly);
 	$plane = makePlane($px);
+	$unresolved = end($colors);
 	for ($i = 0; $i < $px; $i++) {
 		for ($j = 0; $j < $px; $j++) {
+			$converged = False;
 			$z = $plane[$i][$j];
 			for ($k = 0; $k < $max; $k++) {
 				foreach ($roots as $l => $root) {
 					if ($dist($z, $root) <= $tol) {
+						$converged = True;
 						echo $colors[$l];
 						break 2;
 					} // if
 				} // foreach
 				$z = newton($poly, $der, $z);
 			} // for
+			if (!$converged)
+				echo $unresolved;
 		} // for
 		echo "\n";
 	} // for
@@ -122,7 +127,8 @@ fractal(
 		// uses ANSI escape codes
 		"\033[41m  \033[0m", // red
 		"\033[42m  \033[0m", // green
-		"\033[44m  \033[0m"  // blue
+		"\033[44m  \033[0m", // blue
+		"\033[40m  \033[0m"  // black to signify the void
 	], [
 		[ 1  ,  0                 ],
 		[-0.5,  0.8660254037844386],

@@ -10,7 +10,7 @@ AUTHOR: Zachary Krepelka
 DATE: Sunday, March 3rd, 2024
 ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-UPDATED: Tuesday, March 19th, 2024 at 12:04 AM
+UPDATED: Sunday, October 26th, 2025 at 1:06 PM
 
 %}
 
@@ -20,10 +20,12 @@ function newton()
 
 	fractal(25, 256, 0.001, [1 0 0 -1], [
 
-		"\033[41m  \033[0m" % Red
-		"\033[42m  \033[0m" % Green
-		"\033[44m  \033[0m" % Blue
-		"\033[40m  \033[0m" % Black, to signify the void.
+		% uses ANSI escape codes
+
+		"\033[41m  \033[0m" % red
+		"\033[42m  \033[0m" % green
+		"\033[44m  \033[0m" % blue
+		"\033[40m  \033[0m" % black to signify the void
 
 	], roots([1 0 0 -1]))
 
@@ -40,6 +42,7 @@ function fractal(px, max, tol, poly, colors, roots)
 
 	der = polyder(poly);
 	plane = makePlane(px);
+	unresolved = colors(end);
 
 	for i = 1 : px
 		for j = 1 : px
@@ -48,7 +51,7 @@ function fractal(px, max, tol, poly, colors, roots)
 			for k = 0 : max
 				for l = 1 : size(roots)
 					if dist(z, roots(l)) <= tol
-						fprintf(colors(l))
+						fprintf(colors(l));
 						converged = true;
 						break
 					end
@@ -57,11 +60,10 @@ function fractal(px, max, tol, poly, colors, roots)
 				z = newton(poly, der, z);
 			end
 			if ~converged
-				% print default value
-				fprintf(colors(end))
+				fprintf(unresolved);
 			end
 		end
-		fprintf("\n")
+		fprintf("\n");
 	end
 end
 

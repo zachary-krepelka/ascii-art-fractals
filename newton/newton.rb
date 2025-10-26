@@ -11,7 +11,7 @@ AUTHOR: Zachary Krepelka
 DATE: Sunday, October 29th, 2023
 ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-UPDATED: Tuesday, March 19th, 2024 at 12:05 AM
+UPDATED: Sunday, October 26th, 2025 at 12:19 PM
 
 =end
 
@@ -19,14 +19,15 @@ def fractal(px, max, tol, poly, colors, roots)
 
 	der = diff poly
 	plane = make_plane px
+	unresolved = colors.last
 
  	px.times do |i|
  		px.times do |j|
 			z = Complex *plane[i][j]
 			converged = false
 			max.times do
-				colors.zip(roots).each do |pair|
-					color, root = pair
+				roots.zip(colors).each do |pair|
+					root, color = pair
 					if z.dist(root) <= tol
 						print color
 						converged = true
@@ -36,10 +37,10 @@ def fractal(px, max, tol, poly, colors, roots)
 				break if converged
 				z = newton poly, der, z
 			end
+			print unresolved unless converged
  		end
 		puts
  	end
-
 end
 
 def newton(poly, der, guess)
@@ -131,11 +132,15 @@ end
 
 polynomial = [-1, 0, 0, 1]
 
-colors = "\033[41m  \033[0m", "\033[42m  \033[0m", "\033[44m  \033[0m"
+colors = [ # uses ANSI escape codes
+	"\033[41m  \033[0m", # red
+	"\033[42m  \033[0m", # green
+	"\033[44m  \033[0m", # blue
+	"\033[40m  \033[0m"] # black to signify the void
 
-roots = [ \
-	Complex(1   ,  0                 ), \
-	Complex(-0.5,  0.8660254037844386), \
+roots = [
+	Complex(1   ,  0                 ),
+	Complex(-0.5,  0.8660254037844386),
 	Complex(-0.5, -0.8660254037844386)]
 
 fractal(25, 256, 0.001, polynomial, colors, roots)

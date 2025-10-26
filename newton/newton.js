@@ -11,25 +11,30 @@ AUTHOR: Zachary Krepelka
 DATE: Sunday, September 10th, 2023
 ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-UPDATED: Tuesday, March 19th, 2024 at 12:02 AM
+UPDATED: Sunday, October 26th, 2025 at 11:35 AM
 
 */
 
 function fractal(px, max, tol, poly, colors, roots) {
 	const der = diff(poly);
 	const plane = makePlane(px);
+	const unresolved = colors[colors.length - 1];
 	for (let i = 0; i < px; i++) {
 		for (let j = 0; j < px; j++) {
+			let converged = false;
 			let z = plane[i][j]; LOOP:
 			for (let k = 0; k < max; k++) {
 				for (let l = 0; l < roots.length; l++) {
 					if (dist(z, roots[l]) <= tol) {
+						converged = true;
 						process.stdout.write(colors[l]);
 						break LOOP;
 					} // if
 				} // for
 				z = newton(poly, der, z);
 			} // for
+			if (!converged)
+				process.stdout.write(unresolved);
 		} // for
 		process.stdout.write("\n");
 	} // for
@@ -106,7 +111,8 @@ fractal(
 	[ // uses ANSI escape codes
 		"\033[41m  \033[0m", // red
 		"\033[42m  \033[0m", // green
-		"\033[44m  \033[0m"  // blue
+		"\033[44m  \033[0m", // blue
+		"\033[40m  \033[0m"  // black to signify the void
 	],
 	[
 		[ 1  ,  0                 ],
