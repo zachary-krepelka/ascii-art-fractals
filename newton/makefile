@@ -3,10 +3,12 @@
 # DATE: Wednesday, July 10th, 2024
 # ABOUT: a project for the exploration of programming languages
 # ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-# UPDATED: Friday, February 21st, 2025 at 8:25 AM
+# UPDATED: Sunday, October 26th, 2025 at 1:40 PM
 
-java:
-	javac newton.java && java Newton
+# Goals ------------------------------------------------------------------- {{{1
+
+java: Newton.class
+	java Newton
 
 javascript:
 	node newton.js
@@ -18,7 +20,7 @@ lua:
 	lua newton.lua
 
 python:
-	python newton.py
+	python3 newton.py
 
 ruby:
 	ruby newton.rb
@@ -29,10 +31,11 @@ julia:
 php:
 	php newton.php
 
-kotlin:
-	kotlinc newton.kt && kotlin NewtonKt
+kotlin: NewtonKt.class
+	kotlin NewtonKt
 
 matlab:
+	# using Window's Subsystem for Linux
 	cmd.exe /c matlab -nojvm -batch newton
 
 SHELL = bash
@@ -46,3 +49,13 @@ bc:
 	s/\(c\+\)/\d27[44m\1\d27[0m/g
 	s/[abc?]/ /g
 	COLORIZATION_SCRIPT
+
+# Prerequisites ----------------------------------------------------------- {{{1
+
+Newton.class: newton.java
+	javac newton.java
+
+NewtonKt.class: newton.kt
+	kotlinc newton.kt
+
+# vim: tw=80 ts=8 sw=8 noet fdm=marker
