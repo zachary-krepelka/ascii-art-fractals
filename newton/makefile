@@ -6,7 +6,7 @@
 # UPDATED: Friday, February 21st, 2025 at 8:25 AM
 
 java:
-	javac Newton.java && java Newton
+	javac newton.java && java Newton
 
 javascript:
 	node newton.js
