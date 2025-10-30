@@ -1,4 +1,4 @@
-#!/bin/bc -ql
+#!/usr/bin/env -S BC_LINE_LENGTH=0 bc -ql
 
 /*
 
@@ -13,7 +13,7 @@ AUTHOR: Zachary Krepelka
 DATE: Wednesday, January 1st, 2025
 ABOUT: a project for the exploration of programming languages
 ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-UPDATED: Thursday, January 2nd, 2025 at 1:20 AM
+UPDATED: Thursday, October 30th, 2025 at 6:17 PM
 
 */
 

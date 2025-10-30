@@ -3,7 +3,7 @@
 # DATE: Wednesday, July 10th, 2024
 # ABOUT: a project for the exploration of programming languages
 # ORIGIN: https://github.com/zachary-krepelka/ascii-art-fractals.git
-# UPDATED: Sunday, October 26th, 2025 at 1:52 PM
+# UPDATED: Thursday, October 30th, 2025 at 6:23 PM
 
 # Goals ------------------------------------------------------------------- {{{1
 
@@ -41,7 +41,7 @@ matlab:
 SHELL = bash
 .ONESHELL:
 bc:
-	sed -f - <(bc -ql newton.bc) << COLORIZATION_SCRIPT
+	sed -f - <(BC_LINE_LENGTH=0 bc -ql newton.bc) << COLORIZATION_SCRIPT
 	y/0123/?abc/
 	s/\(?\+\)/\d27[30m\1\d27[0m/g
 	s/\(a\+\)/\d27[41m\1\d27[0m/g
